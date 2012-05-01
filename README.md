@@ -80,6 +80,10 @@ Result example (for query with sorting):
 }
 ```
 
+### Full Text Search Eaxmple
+Inspired by [Full Text Search in Mongo](http://www.mongodb.org/display/DOCS/Full+Text+Search+in+Mongo).
+This example demonstrate simplified implementation of full-text search in MogoDB.
+
 ## Resources
 1. Presentation (_in development_): [Indexing with MongoDB](https://docs.google.com/open?id=0B3yjF5899w1LMDA0ZFd2Yko5OU0)
 2. MongoDB: [http://www.mongodb.org/](http://www.mongodb.org/)
