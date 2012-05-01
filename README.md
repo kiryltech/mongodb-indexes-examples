@@ -105,34 +105,36 @@ mongo full-text-search-example.js
 * Before save document:
     * Collect all words in document into one array
     * Put collected words into document (in example field "_w" is used), document looks like this:
-    ```json
-    {
-    	"_id" : ObjectId("4f9fdf87a09f1819274c3f6b"),
-    	"v1" : "First string",
-    	"v2" : "Second string",
-    	"v3" : [
-    		{
-    			"v4" : "String in nested list item"
-    		}
-    	],
-    	"_w" : [
-    		"first",
-    		"string",
-    		"second",
-    		"nested",
-    		"list",
-    		"item"
-    	]
-    }
-    ```
+
+```json
+{
+    "_id" : ObjectId("4f9fdf87a09f1819274c3f6b"),
+    "v1" : "First string",
+    "v2" : "Second string",
+    "v3" : [
+    	{
+    	    "v4" : "String in nested list item"
+    	}
+    ],
+    "_w" : [
+    	"first",
+    	"string",
+    	"second",
+    	"nested",
+    	"list",
+    	"item"
+    ]
+}
+```
 * On search execution:
     * Collect all words in search term
     * Create search criteria, using operator $all:
-    ```json
-    {
-      "_w": { "$all": [<wrods_from_search_term>] }
-    }
-    ```
+    
+```json
+{
+    "_w": { "$all": [<words_from_search_term>] }
+}
+```
 
 ## Resources
 1. Presentation (_in development_): [Indexing with MongoDB](https://docs.google.com/open?id=0B3yjF5899w1LMDA0ZFd2Yko5OU0)
