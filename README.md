@@ -13,3 +13,4 @@ _TBD: Description of basic-examples.js_
 1. Presentation (_in development_): [Indexing with MongoDB](https://docs.google.com/open?id=0B3yjF5899w1LMDA0ZFd2Yko5OU0)
 2. MongoDB: [http://www.mongodb.org/](http://www.mongodb.org/)
 3. Indexes in MongoDB (Official documentation): [http://www.mongodb.org/display/DOCS/Indexes](http://www.mongodb.org/display/DOCS/Indexes)
+4. Explain operation (Official documentation): [http://www.mongodb.org/display/DOCS/Explain](http://www.mongodb.org/display/DOCS/Explain)
