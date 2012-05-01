@@ -14,7 +14,7 @@ _TBD: Description of basic-examples.js_
 mongo basic-examples.js
 ```
 
-### Iterating Over Two Indexex
+### Iterating Over Two Indexes
 This scripts demonstrates how MongoDB uses more than one index for optimization of queries.
 
 #### Run
