@@ -14,6 +14,14 @@ _TBD: Description of basic-examples.js_
 mongo basic-examples.js
 ```
 
+### Compound Indexes Examples
+_TBD: Description of compound-indexes-example.js_
+
+#### Run
+```
+mongo compound-indexes-example.js
+```
+
 ### Iterating Over Two Indexes
 This script demonstrates how MongoDB uses more than one index for optimization of queries.
 
