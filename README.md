@@ -15,7 +15,7 @@ mongo basic-examples.js
 ```
 
 ### Iterating Over Two Indexes
-This scripts demonstrates how MongoDB uses more than one index for optimization of queries.
+This script demonstrates how MongoDB uses more than one index for optimization of queries.
 
 #### Run
 ```
@@ -94,7 +94,7 @@ Result example (for query with sorting):
 ### Full Text Search Eaxmple
 Inspired by [Full Text Search in Mongo](http://www.mongodb.org/display/DOCS/Full+Text+Search+in+Mongo).
 
-This example demonstrate simplified implementation of full-text search in MogoDB.
+This example demonstrates simplified implementation of full-text search in MogoDB.
 
 #### Run
 ```
@@ -134,6 +134,34 @@ mongo full-text-search-example.js
 {
     "_w": { "$all": [<words_from_search_term>] }
 }
+```
+
+### Unique constraints
+This example shows how to achieve the following goals:
+
+* Implement ability to create unlimited count of unique constraints in one collection
+* Implement ability to define different scopes of uniqueness for documents in one collection
+
+#### Run
+```
+mongo unique-constraints-example.js
+```
+
+#### Description
+For each matched constraint collect unique tokens and add it to list field, this field should be covered by unique, sparse index.
+
+Example:
+```
+$ mongo unique-constraints-example.js --quiet
+Record: {  "t" : "t1",  "v1" : "tag",  "_u" : [ 	"t1$tag" ],  "_id" : ObjectId("4fa22d66b8da12e83007b96b") } saved successfully.
+Record: {  "t" : "t1",  "v1" : "tag2",  "_u" : [ 	"t1$tag2" ],  "_id" : ObjectId("4fa22d67b8da12e83007b96c") } saved successfully.
+Record: {  "t" : "t1",  "v1" : "tAg",  "_u" : [ 	"t1$tag" ],  "_id" : ObjectId("4fa22d67b8da12e83007b96d") } was rejected.
+Record: {  "t" : "t2",  "v1" : "tAg",  "_u" : [ 	"t2$tAg" ],  "_id" : ObjectId("4fa22d67b8da12e83007b96e") } saved successfully.
+Record: {  "t" : "t2",  "v1" : "tag",  "_u" : [ 	"t2$tag" ],  "_id" : ObjectId("4fa22d67b8da12e83007b96f") } saved successfully.
+Record: {  "t" : "t2",  "v1" : "Tag",  "_u" : [ 	"t2$Tag" ],  "_id" : ObjectId("4fa22d67b8da12e83007b970") } saved successfully.
+Record: {  "t" : "t2",  "v1" : "tag",  "_u" : [ 	"t2$tag" ],  "_id" : ObjectId("4fa22d67b8da12e83007b971") } was rejected.
+Record: {  "t" : "t3",  "v1" : "tag",  "_id" : ObjectId("4fa22d67b8da12e83007b972") } saved successfully.
+Record: {  "t" : "t3",  "v1" : "tag",  "_id" : ObjectId("4fa22d67b8da12e83007b973") } saved successfully.
 ```
 
 ## Resources
